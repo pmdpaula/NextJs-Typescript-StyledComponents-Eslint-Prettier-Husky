@@ -10,6 +10,7 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -32,11 +33,7 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     // 'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
-    'import/extensions': [
-      'error',
-      'never',
-      { pattern: { '.ts': 'never', '.tsx': 'never' } },
-    ],
+    'import/extensions': ['error', 'never', { pattern: { '.svg': 'always' } }],
 
     // We will use TypeScript's types for component props instead
     'react/prop-types': 'off',
@@ -59,5 +56,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    indent: 'off',
+    '@typescript-eslint/indent': ['error', 2], // 2 spaces === 1 tab
   },
 };
